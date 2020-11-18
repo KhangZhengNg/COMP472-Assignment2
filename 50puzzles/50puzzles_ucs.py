@@ -121,17 +121,17 @@ def output_analysis():
   average_cost = total_cost/(50 - total_no_solution)
   average_time = total_time/(50 - total_no_solution)
   
-  f = open("./50puzzles/50puzzles.txt", "w")
-  f.write("average_length_solution = ", average_length_solution)
-  f.write("total_length_solution = ", total_length_solution)
-  f.write("average_length_search = ", average_length_search)
-  f.write("total_length_search = ", total_length_search)
-  f.write("average_no_solution = ", average_no_solution)
-  f.write("total_no_solution = ", total_no_solution)
-  f.write("average_cost = ", average_cost)
-  f.write("total_cost = ", total_cost)
-  f.write("average_time = ", average_time)
-  f.write("total_time = ", total_time)
+  f = open("./50puzzles/50puzzles_ucs_analysis.txt", "w")
+  f.write("average_length_solution = " + str(average_length_solution) + "\n")
+  f.write("total_length_solution = " + str(total_length_solution) + "\n")
+  f.write("average_length_search = " + str(average_length_search) + "\n")
+  f.write("total_length_search = " + str(total_length_search) + "\n")
+  f.write("average_no_solution = " + str(average_no_solution) + "\n")
+  f.write("total_no_solution = " + str(total_no_solution) + "\n")
+  f.write("average_cost = " + str(average_cost) + "\n")
+  f.write("total_cost = " + str(total_cost) + "\n")
+  f.write("average_time = " + str(average_time) + "\n")
+  f.write("total_time = " + str(total_time) + "\n")
   f.close()
 
 def check_childs_in_open(childs, open, visited_node):
@@ -183,8 +183,6 @@ def create_child_nodes(current_node):
     child_nodes.append(create_puzzle_node(move_right(current_node.state), current_node, current_node.node_cost + 1, 1))
     child_nodes.append(create_puzzle_node(move_left(current_node.state), current_node, current_node.node_cost + 1, 1))
     child_nodes.append(create_puzzle_node(move_vert(current_node.state), current_node, current_node.node_cost + 1, 1))
-    child_nodes.append(create_puzzle_node(diagonal_move_left(current_node.state), current_node, current_node.node_cost + 3, 3))
-    child_nodes.append(create_puzzle_node(diagonal_move_right(current_node.state), current_node, current_node.node_cost + 3, 3))
   return child_nodes
 
 def move_vert(state):
@@ -236,7 +234,7 @@ def wrap_move_left_or_right(state):
 def diagonal_move_left(state):
   new_state = state[:]
   index_0 = new_state.index(0)
-  if (new_state.index(0) == {0, 4}):
+  if new_state.index(0) in [0, 4]:
     num_tile = new_state[abs(index_0 - 7)]
     new_state[index_0], new_state[abs(index_0 - 7)] = new_state[abs(index_0 - 7)], new_state[index_0]
   else:
@@ -247,7 +245,7 @@ def diagonal_move_left(state):
 def diagonal_move_right(state):
   new_state = state[:]
   index_0 = new_state.index(0)
-  if new_state.index(0) == [3, 7]:
+  if new_state.index(0) in [3, 7]:
     num_tile = new_state[abs(index_0 - 7)]
     new_state[index_0], new_state[abs(index_0 - 7)] = new_state[abs(index_0 - 7)], new_state[index_0]
   else:
@@ -264,6 +262,7 @@ def read_input(file):
     int_array = [int(numeric_string) for numeric_string in str_array]
     puzzles.append(int_array)
     puzzles_count += 1
+  file_open.close()
   return [puzzles_count, puzzles]
 
 main()

@@ -1,0 +1,10 @@
+average_length_solution = 8.925925925925926
+total_length_solution = 241
+average_length_search = 7299.37037037037
+total_length_search = 197083
+average_no_solution = 0.46
+total_no_solution = 23
+average_cost = 11.481481481481481
+total_cost = 310
+average_time = 13.785185185185249
+total_time = 372.2000000000017
