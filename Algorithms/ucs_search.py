@@ -50,7 +50,7 @@ def uniform_cost_search():
   open_nodes.append(create_puzzle_node([puzzle_input, 0, ""],None,0,0))
   visited_node.append(open_nodes[0])
   current_node=open_nodes.pop(0)
-  while (current_node.state != [1, 2, 3, 4, 5, 6, 7, 0] and not is_times_up):
+  while (not (current_node.state in [[1, 2, 3, 4, 5, 6, 7, 0], [1, 3, 5, 7, 2, 4, 6, 0]]) and not is_times_up):
     childs = create_child_nodes(current_node)
     open_nodes = check_childs_in_open(childs, open_nodes, visited_node)
     visited_node.append(open_nodes[0])
