@@ -10,7 +10,7 @@ Khang Zheng Ng, 27879709 </br>
 
 ## Distribution of tasks
 
-Khang Zheng Ng: UFC </br>
+Khang Zheng Ng: UCS </br>
 Michael Naccache: GBFS </br>
 Amina Isse: A* </br>
 </br>
