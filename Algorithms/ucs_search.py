@@ -72,18 +72,18 @@ def output(path, visited_node):
   global total_seconds
   # output to Solution File
   print("OUTPUTTING TO SOLUTION FILE NOW")
-  output_source_file = open("./Output/" + str(puzzle_index) + "_ucs_solution.txt", "w")
+  output_solution_file = open("./Output/" + str(puzzle_index) + "_ucs_solution.txt", "w")
   if total_seconds <= 60:
     total_cost = 0
     for x in path:
       total_cost += x.edge_cost
       output = (str(x.num_tile) + "_" + str(x.edge_cost) + "_" + str(x.state) + "\n").replace(" ", "").replace(",","_").replace("[", "").replace("]","")
-      output_source_file.write(output)
+      output_solution_file.write(output)
     formatted_time = "{:.2f}".format(total_seconds)
-    output_source_file.write(("\n\n"+ str(total_cost) + "_" + str(formatted_time)))
+    output_solution_file.write(("\n\n"+ str(total_cost) + "_" + str(formatted_time)))
   else:
-    output_source_file.write("NO SOLUTION")
-  output_source_file.close()
+    output_solution_file.write("NO SOLUTION")
+  output_solution_file.close()
   # output to Search File
   print("OUTPUTTING TO SOLUTION FILE NOW")
   output_search_file = open("./Output/" + str(puzzle_index) + "_ucs_search.txt", "w")

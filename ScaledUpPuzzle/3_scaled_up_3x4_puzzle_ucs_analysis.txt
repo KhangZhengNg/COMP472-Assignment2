@@ -1,0 +1,8 @@
+average_length_solution = 2.6
+total_length_solution = 13
+average_length_search = 1899.0
+total_length_search = 9495
+average_cost = 2.8
+total_cost = 14
+average_time = 0.02
+total_time = 0.1
