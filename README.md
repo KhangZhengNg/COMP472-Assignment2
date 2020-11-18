@@ -4,15 +4,15 @@ GitHub Repository: https://github.com/KhangZhengNg/COMP472-Assignment2
 
 ## Team members
 
-Amina Isse, 40099096 </br>
+(Leader) Amina Isse, 40099096 </br>
 Michael Naccache, 29794840 </br>
 Khang Zheng Ng, 27879709 </br>
 
 ## Distribution of tasks
 
-Amina Isse: A* </br>
-Michael Naccache: GBFS </br>
 Khang Zheng Ng: UFC </br>
+Michael Naccache: GBFS </br>
+Amina Isse: A* </br>
 </br>
 Everyone: Distribution of instances and presentation slides </br>
 
